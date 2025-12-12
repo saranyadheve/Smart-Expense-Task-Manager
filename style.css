@@ -1,0 +1,91 @@
+:root{
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --text:#222;
+  --primary:#5565ff;
+  --shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+[data-theme="dark"]{
+  --bg:#0f1115;
+  --card:#14161a;
+  --text:#e7e7e7;
+  --shadow:0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* layout */
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  min-height:100vh;
+}
+
+/* sidebar */
+.sidebar{
+  width:220px;
+  background:#222;
+  color:white;
+  padding:18px;
+}
+.sidebar h2{ margin:0 0 12px 0; font-size:18px; }
+.sidebar button{ width:100%; padding:10px; border:none; background:var(--primary); color:#fff; border-radius:8px; cursor:pointer; }
+
+/* main */
+.main{ flex:1; padding:18px 22px; overflow:auto; }
+h1{ font-size:22px; margin:0 0 12px 0; }
+
+/* container */
+.container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:12px; /* reduced gap to make compact */
+}
+
+/* cards */
+.card{
+  background:var(--card);
+  padding:14px; /* slightly reduced */
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  transition:transform .18s;
+}
+.card:hover{ transform:translateY(-4px); }
+
+/* progress */
+.progress{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:conic-gradient(var(--primary) var(--p), #ddd 0);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  transition:0.2s;
+}
+.progress span{ font-size:20px; font-weight:700; }
+
+/* lists & inputs */
+ul{ padding:0; margin:8px 0 0 0; }
+li{ list-style:none; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.06); display:flex; justify-content:space-between; align-items:center; font-size:14px; }
+input{ width:100%; padding:8px; border-radius:8px; border:1px solid #cfcfcf; margin-top:8px; box-sizing:border-box; }
+
+/* buttons */
+.btn{ background:var(--primary); color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; margin-top:8px; }
+.btn.small{ padding:6px 10px; font-size:13px; }
+
+/* expense summary */
+.summary{ margin-top:10px; padding:8px; border-radius:8px; font-weight:600; text-align:center; }
+
+/* high/normal item styles */
+.item-high{ color:#b71c1c; font-weight:600; }   /* single expense high */
+.item-normal{ color:var(--text); }
+
+/* summary color states */
+.summary.green{ background:#e6f9ee; color:#0b7a3a; }
+.summary.red{ background:#fff0f0; color:#b71c1c; }
+
+/* small tweaks to avoid too much bottom whitespace */
+body, html { height:100%; }

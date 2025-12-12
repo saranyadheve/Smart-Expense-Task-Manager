@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Expense & Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <button onclick="toggleTheme()">Toggle Dark/Light</button>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <h1>Smart Expense & Task Manager</h1>
+
+    <div class="container">
+
+      <!-- Expense Card -->
+      <div class="card">
+        <h3>Add Expense</h3>
+
+        <!-- Budget input -->
+        <label for="budgetAmount">Monthly Budget (₹)</label>
+        <input type="number" id="budgetAmount" placeholder="Enter monthly budget" />
+        <button class="btn small" onclick="saveBudget()">Set Budget</button>
+
+        <hr />
+
+        <input type="text" id="expenseName" placeholder="Expense Name" />
+        <input type="number" id="expenseAmount" placeholder="Amount" />
+        <button class="btn" onclick="addExpense()">Add</button>
+
+        <div id="expenseSummary" class="summary">Total: ₹0</div>
+
+        <ul id="expenseList"></ul>
+      </div>
+
+      <!-- Task Card -->
+      <div class="card">
+        <h3>Add Task</h3>
+        <input type="text" id="taskName" placeholder="Task Name" />
+        <button class="btn" onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+      </div>
+
+      <!-- Progress Card -->
+      <div class="card">
+        <h3>Progress Overview</h3>
+        <div class="progress" id="progress" style="--p:0deg;">
+          <span id="progressText">0%</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
